@@ -2,3 +2,13 @@ button a{
     color: #fff !important;
     padding: 0 !important;
 }
+.custom-nav, .custom-user{
+text-transform: uppercase;
+color: #232323 !important;
+letter-spacing: 1px;
+font-size: 16px;
+font-weight: 700;
+}
+.custom-nav:hover{
+color: #FB0200 !important;
+}

@@ -12,6 +12,10 @@ const TourPackages = () => {
 
     return (
         <div>
+            <div className="section-title text-center my-5 pt-3">
+                <h2>Available Tour And Pricing</h2>
+                <h4>Book your convenient tour and enjoy</h4>
+            </div>
             <Container>
                 <Row className="mt-5">
                     {
