@@ -12,7 +12,7 @@ const TourDetail = () => {
     const { register, handleSubmit, reset } = useForm();
 
     useEffect(() => {
-        const url = `http://localhost:5000/allTour/${singleTourId}`;
+        const url = `https://ghastly-barrow-28735.herokuapp.com/allTour/${singleTourId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setSingleTour(data));
@@ -52,7 +52,7 @@ const TourDetail = () => {
         data.tourStatus = 'pending';
         data.date = getDate;
         data.time = getTime;
-        fetch('http://localhost:5000/booking', {
+        fetch('https://ghastly-barrow-28735.herokuapp.com/booking', {
 
             method: 'POST',
             headers: { 'content-type': 'application/json' },

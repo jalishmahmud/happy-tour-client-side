@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 const AddNewTour = () => {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = data => {
-        fetch('http://localhost:5000/allTour', {
+        fetch('https://ghastly-barrow-28735.herokuapp.com/allTour', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)

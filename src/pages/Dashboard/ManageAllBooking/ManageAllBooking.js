@@ -5,7 +5,7 @@ const ManageAllBooking = () => {
     const [allBooking, setAllBooking] = useState([]);
     const [controll, setControll] = useState(true);
     useEffect(() => {
-        fetch('http://localhost:5000/booking')
+        fetch('https://ghastly-barrow-28735.herokuapp.com/booking')
             .then(res => res.json())
             .then(data => setAllBooking(data));
     }, [controll]);
@@ -14,7 +14,7 @@ const ManageAllBooking = () => {
     const handleCancleButton = id => {
         const confirm = window.confirm('Are you sure you wnat to cncle your booking?');
         if (confirm) {
-            fetch(`http://localhost:5000/booking/${id}`, {
+            fetch(`https://ghastly-barrow-28735.herokuapp.com/booking/${id}`, {
                 method: 'DELETE',
                 headers: { 'content-type': 'application/json' }
             })
@@ -36,7 +36,7 @@ const ManageAllBooking = () => {
     // Booking Approve
     const handleApproveButton = id => {
         const booking = { tourStatus: 'Approped' }
-        fetch(`http://localhost:5000/booking/${id}`, {
+        fetch(`https://ghastly-barrow-28735.herokuapp.com/booking/${id}`, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(booking)

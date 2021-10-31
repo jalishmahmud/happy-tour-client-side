@@ -8,7 +8,7 @@ const MyBooking = () => {
     const [isCancel, setIsCancel] = useState(true);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/booking/${user.email}`)
+        fetch(`https://ghastly-barrow-28735.herokuapp.com/booking/${user.email}`)
             .then(res => res.json())
             .then(data => setAllBooking(data));
     }, [isCancel]);
@@ -16,7 +16,7 @@ const MyBooking = () => {
     const handleCancleButton = id => {
         const confirm = window.confirm('Are you sure you wnat to cncle your booking?');
         if (confirm) {
-            fetch(`http://localhost:5000/booking/${id}`, {
+            fetch(`https://ghastly-barrow-28735.herokuapp.com/booking/${id}`, {
                 method: 'DELETE',
                 headers: { 'content-type': 'application/json' }
             })

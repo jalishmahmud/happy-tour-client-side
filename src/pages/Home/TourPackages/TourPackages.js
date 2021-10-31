@@ -5,7 +5,7 @@ import TourPackage from '../TourPackage/TourPackage';
 const TourPackages = () => {
     const [tourPackages, setTourPackages] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/allTour')
+        fetch('https://ghastly-barrow-28735.herokuapp.com/allTour')
             .then(res => res.json())
             .then(data => setTourPackages(data));
     }, []);
