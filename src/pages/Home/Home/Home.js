@@ -1,5 +1,5 @@
 import React from 'react';
-import Footer from '../../Shared/Footer/Footer';
+import Slider from '../Slider/Slider';
 import TourPackages from '../TourPackages/TourPackages';
 import WhyChooseUs from '../WhyChooseUs/WhyChooseUs';
 import NewsletterSubscription from './NewsletterSubscription/NewsletterSubscription';
@@ -7,10 +7,10 @@ import NewsletterSubscription from './NewsletterSubscription/NewsletterSubscript
 const Home = () => {
     return (
         <div>
+            <Slider></Slider>
             <WhyChooseUs></WhyChooseUs>
             <TourPackages></TourPackages>
             <NewsletterSubscription></NewsletterSubscription>
-            <Footer></Footer>
 
         </div>
     );

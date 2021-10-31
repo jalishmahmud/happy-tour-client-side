@@ -14,7 +14,7 @@ const TourPackage = ({ tourPackage }) => {
 
     return (
         <Col className="mb-5" xs={12} md={4}>
-            <Card style={{ width: '21rem' }}>
+            <Card >
                 <Card.Img variant="top" src={img} />
                 <Card.Body>
                     <Card.Title>{tourName}</Card.Title>

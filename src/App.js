@@ -13,6 +13,7 @@ import Dashboard from './pages/Dashboard/Dashboard/Dashboard';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import TourDetail from './pages/Home/Home/TourDetail/TourDetail';
+import Footer from './pages/Shared/Footer/Footer';
 
 function App() {
   return (
@@ -26,21 +27,18 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
-          <PrivateRoute path="/about">
+          <Route path="/about">
             <About></About>
-          </PrivateRoute>
-          <PrivateRoute path="/services">
-            <Services></Services>
-          </PrivateRoute>
+          </Route>
           <PrivateRoute path="/tourDetail/:singleTourId">
             <TourDetail></TourDetail>
           </PrivateRoute>
           <Route path="/contact">
             <Contact></Contact>
           </Route>
-          <Route path="/dashboard">
+          <PrivateRoute path="/dashboard">
             <Dashboard></Dashboard>
-          </Route>
+          </PrivateRoute>
           <Route path="/login">
             <Login></Login>
           </Route>
@@ -51,6 +49,7 @@ function App() {
             <NotFound></NotFound>
           </Route>
         </Switch>
+        <Footer></Footer>
       </Router>
     </AuthProvider>
   );

@@ -8,13 +8,13 @@ const Footer = () => {
         <div className="footer">
             <h2>Fotter</h2>
             <Container>
-                <Row className="footer-content py-4">
-                    <Col xs={6} md={3}>
+                <Row className="footer-content">
+                    <Col className="py-4" xs={12} md={3}>
                         <h4>About Us</h4>
                         <img className="mb-3" src={logo} alt="" />
                         <p>Encounter the most bewitching wines around the world with a knowledgeable wine sommelier to experience the sublime with just a sip. Relish from the most</p>
                     </Col>
-                    <Col xs={6} md={3}>
+                    <Col className="py-4" xs={12} md={3}>
                         <h4>Contact Info</h4>
                         <h6>ADDRESS:</h6>
                         <p>123 Street Name, City, England</p>
@@ -28,7 +28,7 @@ const Footer = () => {
                         <h6>WORKING DAYS/HOURS:</h6>
                         <p>Mon - Sun / 9:00 AM - 8:00 PM</p>
                     </Col>
-                    <Col xs={6} md={3}>
+                    <Col className="py-4" xs={12} md={3}>
                         <h4>Customer Service</h4>
                         <ul>
                             <li><Link to="/">Help And FAQs</Link></li>
@@ -41,7 +41,7 @@ const Footer = () => {
                             <li><Link to="/">Privacy</Link></li>
                         </ul>
                     </Col>
-                    <Col xs={6} md={3}>
+                    <Col className="py-4" xs={12} md={3}>
                         <h4>Popular Tour</h4>
                         <span>Darjeeling</span>
                         <span>Sikkim Tour</span>
@@ -55,6 +55,9 @@ const Footer = () => {
                         <span>Family Tour</span>
                         <span>Education</span>
                     </Col>
+                </Row>
+                <Row >
+                    <p className="copyrhgit text-center py-3">Copyright &copy; Happy Tour,  All Rights Reserved. Developed By : Jalish Mahmud</p>
                 </Row>
             </Container>
         </div>

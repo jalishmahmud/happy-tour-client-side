@@ -27,8 +27,8 @@ const Login = () => {
     return (
         <div>
             <Container>
-                <Row className="mt-5">
-                    <Col xs={12} md={4}>
+                <Row className="my-5 text-center">
+                    <Col className="d-flex justify-content-center" xs={12}>
                         {/* <Form>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Email address</Form.Label>
@@ -49,15 +49,15 @@ const Login = () => {
                         <br />
                         <div>------------------- OR -------------------</div>
                         <br /> */}
-                        <Button onClick={handleGoogleSignIn} variant="danger">Login With Google</Button>
-                    </Col>
-                    <Col xs={12} md={8}>
-
+                        <div className="w-50 p-5 border border-2 rounded">
+                            <Button onClick={handleGoogleSignIn} variant="danger">Login With Google</Button>
+                        </div>
                     </Col>
                 </Row>
             </Container>
         </div>
     );
 };
+
 
 export default Login;
