@@ -7,11 +7,10 @@ import useAuth from '../../../../hooks/useAuth';
 
 const TourDetail = () => {
     const { user } = useAuth();
-    const { register, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
     const { singleTourId } = useParams();
-    console.log("id is", singleTourId);
     const [singleTour, setSingleTour] = useState({});
+    const { register, handleSubmit, reset } = useForm();
+
     useEffect(() => {
         const url = `http://localhost:5000/allTour/${singleTourId}`;
         fetch(url)
@@ -20,6 +19,7 @@ const TourDetail = () => {
     }, []);
 
     const {
+        _id,
         availableSeat,
         cost,
         departurePlace,
@@ -37,8 +37,35 @@ const TourDetail = () => {
         visitingPlace,
     } = singleTour;
 
+    // current dateTime
+    const date = new Date();
+    const [month, day, year] = [date.getMonth(), date.getDate(), date.getFullYear()];
+    const [hour, minutes, seconds] = [date.getHours(), date.getMinutes(), date.getSeconds()];
+    const getDate = `${day}-${month}-${year}`;
+    const getTime = `${hour}-${minutes}-${seconds}`;
 
-    console.log(singleTour);
+    // booking submit/confirm
+    const onSubmit = data => {
+        data.tourName = tourName;
+        data.singleTourFind = _id;
+        data.userEmail = user.email || "";
+        data.tourStatus = 'pending';
+        data.date = getDate;
+        data.time = getTime;
+        fetch('http://localhost:5000/booking', {
+
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    alert('Success! Thanks you for booking with us.');
+                    reset();
+                }
+            })
+    };
 
     return (
         <div>
@@ -81,7 +108,7 @@ const TourDetail = () => {
                     </Col>
                     <Col className="mb-5" xs={12} md={5}>
                         <div className="p-4 border rounded">
-                            <h5 className="mb-3">Confirm Booking For : <span className="text-primary">{tourName}</span></h5>
+                            <h5 className="mb-3">Booking For : <span className="text-primary">{tourName}</span></h5>
 
                             <form onSubmit={handleSubmit(onSubmit)}>
                                 <span>Your Full Name</span>

@@ -29,7 +29,7 @@ const Login = () => {
             <Container>
                 <Row className="mt-5">
                     <Col xs={12} md={4}>
-                        <Form>
+                        {/* <Form>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Form.Label>Email address</Form.Label>
                                 <Form.Control type="email" placeholder="Enter email" />
@@ -48,11 +48,11 @@ const Login = () => {
                         </Form>
                         <br />
                         <div>------------------- OR -------------------</div>
-                        <br />
+                        <br /> */}
                         <Button onClick={handleGoogleSignIn} variant="danger">Login With Google</Button>
                     </Col>
                     <Col xs={12} md={8}>
-                        xs=6 md=4
+
                     </Col>
                 </Row>
             </Container>
